@@ -46,8 +46,7 @@ as
 	while @@fetch_status = 0 
 	begin
 	
-------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------
+
 		declare cur2 cursor for
 			select distinct porta, endereço from endereço where porta = @linha
 		open cur2
@@ -63,13 +62,12 @@ as
 		end
 		close cur2
 		deallocate cur2
-------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------
+
+
 		fetch next from cur into @linha, @dt_envio
 	end
 	close cur
 	deallocate cur
 	
-	close cur2
-	deallocate cur2
+	
 end
